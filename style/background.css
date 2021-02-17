@@ -1,0 +1,49 @@
+.b-popup__icon_shared_project
+{
+    background: url('../image/icons/shared_project.png') no-repeat;
+}
+
+.b-popup__icon_folder
+{
+    background: url('../image/icons/folder.png') no-repeat;
+}
+
+.b-popup__icon_project
+{
+    background: url('../image/icons/project.png') no-repeat;
+}
+
+.b-popup__icon_xls
+{
+    background: url('../image/icons/xls.png') no-repeat;
+}
+
+.b-popup__icon_doc
+{
+    background: url('../image/icons/doc.png') no-repeat;
+}
+
+.b-popup__icon_meeting
+{
+    background: url('../image/icons/meeting.png') no-repeat;
+}
+
+.b-popup__icon_ppt
+{
+    background: url('../image/icons/ppt.png') no-repeat;
+}
+
+.b-popup__icon_unknown
+{
+    background: url('../image/icons/unknown.png') no-repeat;
+}
+
+.b-popup__icon_folder_open
+{
+    background: url('../image/icons/arrow.png') no-repeat;
+}
+
+.b-popup__icon_folder_close
+{
+    background: url('../image/icons/arrow-left.png') no-repeat center;
+}

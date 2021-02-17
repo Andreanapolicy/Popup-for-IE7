@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8eee2edc-97f6-4dcb-97f2-367cf1116c89" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1o96bJgqtX4AxFuNHdyoVnPCcNl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\projects\local\Popup-for-IE7\test" />
+      <recent name="C:\dev\projects\local\Popup-for-IE7\image\icons" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Popup-for-IE7/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8eee2edc-97f6-4dcb-97f2-367cf1116c89" name="Default Changelist" comment="" />
+      <created>1612686529100</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612686529100</updated>
+      <workItem from="1612686530356" duration="19296000" />
+      <workItem from="1612806751213" duration="6927000" />
+      <workItem from="1612939631005" duration="4761000" />
+      <workItem from="1612976031170" duration="3495000" />
+      <workItem from="1613510932562" duration="609000" />
+      <workItem from="1613585838354" duration="10761000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1672" y="97" width="1537" height="952" key="#CSS" timestamp="1612694509091">
+      <screen x="-1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="-1672" y="97" width="1537" height="952" key="#CSS/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1612694509091" />
+    <state x="-1872" y="46" width="1835" height="1017" key="#HTML" timestamp="1612694029460">
+      <screen x="-1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="-1872" y="46" width="1835" height="1017" key="#HTML/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1612694029460" />
+    <state x="228" y="55" width="1403" height="963" key="#JavaScript" timestamp="1612808435272">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="228" y="55" width="1403" height="963" key="#JavaScript/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1612808435272" />
+    <state x="-1457" y="30" width="943" height="1050" key="#PHP" timestamp="1612693891237">
+      <screen x="-1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="-1457" y="30" width="943" height="1050" key="#PHP/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1612693891237" />
+    <state x="794" y="474" key="NewPhpFileDialog" timestamp="1612940134687">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="794" y="474" key="NewPhpFileDialog/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1612689403434" />
+    <state x="794" y="474" key="NewPhpFileDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1612940134687" />
+    <state x="461" y="200" key="SettingsEditor" timestamp="1612813032370">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="461" y="200" key="SettingsEditor/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1612813032370" />
+    <state x="-1143" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612695943852">
+      <screen x="-1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="-1143" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1612695943852" />
+    <state x="-1369" y="-23" width="1369" height="1032" key="dock-window-1" timestamp="1613598496303">
+      <screen x="-1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="183" y="-15" width="1369" height="1032" maximized="true" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613587043826" />
+    <state x="-1369" y="-23" width="1369" height="1032" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1613598496303" />
+  </component>
+</project>
