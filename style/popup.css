@@ -96,12 +96,7 @@
     border-radius: 3px;
 }
 
-.b-popup__element.b-popup__show-more:hover
-{
-    background-color: white;
-}
-
-.b-popup__element:hover
+.b-popup__element-wrapper:hover
 {
     background-color: #d3d6d8;
 }

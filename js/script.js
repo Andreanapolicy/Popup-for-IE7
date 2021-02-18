@@ -96,7 +96,7 @@ function showElement(title, type, level)
     var element = document.createElement('span');
     var elementWrapper = document.createElement('span');
     var icon = document.createElement('span');
-    var title = document.createTextNode(title);
+    var titleNode = document.createTextNode(title);
     var container = document.getElementById('fileTree');
 
     element.className = "b-popup__element";
@@ -109,11 +109,11 @@ function showElement(title, type, level)
 
         element.appendChild(showMoreButton);
         element.appendChild(icon);
-        element.appendChild(title);
+        element.appendChild(titleNode);
     } else
     {
         element.appendChild(icon);
-        element.appendChild(title);
+        element.appendChild(titleNode);
     }
 
     elementWrapper.appendChild(element);

@@ -1,11 +1,10 @@
 function setIndent ()
 {
-    var items = document.getElementsByClassName('b-popup__element-wrapper');
-    for (var index in items)
+    var items = document.getElementById("fileTree").children;
+    for (var index = 0; index < items.length; index++)
     {
         var classes = items[index].className;
-        var indentCoef = classes[classes.length - 1];
-        console.log(indentCoef);
-        items[index].style.marginLeft = 12 * parseInt(indentCoef) + "px";
+        var indentCoef = classes.match(/\d+/)[0];
+        items[index].style.paddingLeft = 12 * parseInt(indentCoef) + "px";
     }
-};
+}
