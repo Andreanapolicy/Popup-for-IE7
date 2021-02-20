@@ -1,25 +1,78 @@
 window.onload = function ()
 {
-    var preloader = document.getElementById('popup');
-    var deg = 0;
-    var nodes = [tree];
-    initSelectionTree(tree, onItemSelected(nodes), undefined);
-    setIndent();
+    // var preloader = document.getElementById('popup');
+    // var deg = 0;
     // setInterval(function ()
     // {
     //     deg += 5;
     //     preloader.style.transform = '-mc-rotate(' + deg + 'deg)';
     // }, 10);
 
-    function initSelectionTree(tree, onItemSelected, selectedItemId)
+    var nodes = [tree];
+    initSelectionTree(tree, onItemSelected(nodes), undefined);
+    document.getElementById("fileTree").onclick = function ()
     {
-        if (!selectedItemId)
+        var evt = event || window.event;
+        var current = evt.target || evt.srcElement;
+
+        if (current.className.match(/show-more/))
         {
-            selectedItemId = tree.id;
+            if (current.className.match(/close/))
+            {
+                if (nodes.length === 0)
+                {
+                    nodes.push(tree);
+                } else
+                { //TODO: выбор нового файло на том же уровне, что уже выбранный
+                    var newNode = false;
+
+                    for (var nodeIndex = nodes.length - 1; nodeIndex >= 0; nodeIndex--)
+                    {
+                        for (var index in nodes[nodeIndex].children)
+                        {
+                            if (nodes[nodeIndex].children[index].id === current.parentElement.id)
+                            {
+                                nodes.push(nodes[nodeIndex].children[index]);
+                                newNode = true;
+                                break;
+                            }
+                        }
+
+                        if (newNode)
+                        {
+                            break;
+                        }
+
+                        nodes.pop();
+                    }
+                }
+            } else
+            {
+                for (var index in nodes)
+                {
+                    if (nodes[index].id === current.parentElement.id)
+                    {
+                        nodes.splice(index, nodes.length - index);
+                    }
+                }
+            }
+        } else
+        {
+            // if (current.className.match(/icon/))
+            // {
+            //     console.log(current.parentElement.id)
+            // }
+            // console.log(current.id)
         }
 
+        initSelectionTree(tree, onItemSelected(nodes), undefined);
+    }
 
+    function initSelectionTree(tree, onItemSelected, selectedItemId)
+    {
+        document.getElementById('fileTree').innerHTML = "";
         startRenderTree(tree, nodes, 0);
+        setIndent();
     }
 };
 
@@ -75,23 +128,32 @@ function startRenderTree(tree, nodes, level)
 {
     if (level === 0)
     {
-        showElement(tree.title, tree.type, level)
-        startRenderTree(tree.children, nodes !== [] ? nodes.splice(0, 1) : [], level + 1)
+        showElement(tree.title, tree.type, tree.id, level, true, nodes[level] === tree);
+        if (nodes !== [] && nodes[level] === tree)
+        {
+            startRenderTree(tree.children, nodes, level + 1);
+        }
     } else
     {
         for (var index in tree)
         {
-            showElement(tree[index].title, tree[index].type, level);
-
-            if (tree[index].children)
+            var isDir = false;
+            if (tree[index].type === "shared_project" || tree[index].type === "project" || tree[index].type === "folder")
             {
-                startRenderTree(tree[index].children, nodes !== [] ? nodes.splice(0, 1) : [], level + 1)
+                isDir = true;
+            }
+
+            showElement(tree[index].title, tree[index].type, tree[index].id, level, isDir, nodes[level] === tree[index]);
+
+            if (tree[index].children && nodes !== [] && nodes[level] === tree[index])
+            {
+                startRenderTree(tree[index].children, nodes, level + 1);
             }
         }
     }
 }
 
-function showElement(title, type, level)
+function showElement(title, type, id, level, isDir, inNode)
 {
     var element = document.createElement('span');
     var elementWrapper = document.createElement('span');
@@ -100,12 +162,13 @@ function showElement(title, type, level)
     var container = document.getElementById('fileTree');
 
     element.className = "b-popup__element";
+    element.id = id;
     elementWrapper.className = "b-popup__element-wrapper b-popup__level_" + level;
     icon.className = "b-popup__icon b-popup__icon_" + type;
-    if (type === "shared_project" || type === "project" || type === "folder")
+    if (isDir)
     {
         var showMoreButton = document.createElement('span');
-        showMoreButton.className = "b-popup__show-more b-popup__icon_folder_close";
+        showMoreButton.className = "b-popup__show-more b-popup__icon_folder_" + (inNode ? "open" : "close");
 
         element.appendChild(showMoreButton);
         element.appendChild(icon);

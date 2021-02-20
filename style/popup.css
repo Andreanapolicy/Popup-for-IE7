@@ -60,7 +60,6 @@
 {
     margin: 2px 0 4px;
     height: auto;
-    width: 100%;
     display: block;
 }
 
@@ -92,7 +91,7 @@
 
 .b-popup__show-more:hover
 {
-    background-color: #d3d6d8;
+    background-color: #b7b8b9;
     border-radius: 3px;
 }
 
@@ -101,7 +100,7 @@
     background-color: #d3d6d8;
 }
 
-.b-popup__element_active
+.b-popup__element-wrapper_active
 {
     background-color: #e2edfa;
 }

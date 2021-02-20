@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eee2edc-97f6-4dcb-97f2-367cf1116c89" name="Default Changelist" comment="" />
+    <list default="true" id="8eee2edc-97f6-4dcb-97f2-367cf1116c89" name="Default Changelist" comment="#PIE7-1 коммит в локале. Подкорректировал вывод данных в popup">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/dataHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/popup.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,8 +96,27 @@
       <workItem from="1612939631005" duration="4761000" />
       <workItem from="1612976031170" duration="3495000" />
       <workItem from="1613510932562" duration="609000" />
-      <workItem from="1613585838354" duration="10761000" />
+      <workItem from="1613585838354" duration="13498000" />
+      <workItem from="1613639550051" duration="3267000" />
+      <workItem from="1613683695223" duration="3265000" />
+      <workItem from="1613732345569" duration="734000" />
+      <workItem from="1613761755810" duration="14888000" />
     </task>
+    <task id="LOCAL-00001" summary="#PIE7-1 коммит в локале. Сделал первичное отображение данных">
+      <created>1613598551675</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613598551675</updated>
+    </task>
+    <task id="LOCAL-00002" summary="#PIE7-1 коммит в локале. Подкорректировал вывод данных в popup">
+      <created>1613641035857</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613641035857</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +133,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="#PIE7-1 коммит в локале. Сделал первичное отображение данных" />
+    <MESSAGE value="#PIE7-1 коммит в локале. Подкорректировал вывод данных в popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="#PIE7-1 коммит в локале. Подкорректировал вывод данных в popup" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1672" y="97" width="1537" height="952" key="#CSS" timestamp="1612694509091">
@@ -135,14 +165,28 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="461" y="200" key="SettingsEditor/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1612813032370" />
-    <state x="-1143" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612695943852">
-      <screen x="-1920" y="30" width="1920" height="1050" />
+    <state x="552" y="284" key="Vcs.Push.Dialog.v2" timestamp="1613641054659">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1613598716521" />
+    <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1613641054659" />
+    <state x="777" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613640758148">
+      <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="-1143" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1612695943852" />
-    <state x="-1369" y="-23" width="1369" height="1032" key="dock-window-1" timestamp="1613598496303">
+    <state x="777" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050@0.30.1920.1050" timestamp="1613640758148" />
+    <state x="1" y="30" width="1320" height="1032" maximized="true" key="dock-window-1" timestamp="1613773674487">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="1" y="30" width="1320" height="1032" maximized="true" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613773674487" />
+    <state x="-1369" y="-23" width="1369" height="1032" maximized="true" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1613600501142" />
+    <state x="-1252" y="130" width="583" height="849" key="find.popup" timestamp="1613768136157">
       <screen x="-1920" y="30" width="1920" height="1050" />
     </state>
-    <state x="183" y="-15" width="1369" height="1032" maximized="true" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613587043826" />
-    <state x="-1369" y="-23" width="1369" height="1032" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1613598496303" />
+    <state x="-1252" y="130" width="583" height="849" key="find.popup/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613768136157" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1613655818598">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1613655818598" />
   </component>
 </project>
