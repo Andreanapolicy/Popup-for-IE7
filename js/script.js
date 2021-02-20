@@ -9,69 +9,175 @@ window.onload = function ()
     // }, 10);
 
     var nodes = [tree];
+    var selectedItemId = undefined;
+    var timer;
     initSelectionTree(tree, onItemSelected(nodes), undefined);
-    document.getElementById("fileTree").onclick = function ()
+    document.getElementById("fileTree").ondblclick = function ()
     {
         var evt = event || window.event;
         var current = evt.target || evt.srcElement;
 
-        if (current.className.match(/show-more/))
+        if (!current.className.match(/show-more/))
         {
-            if (current.className.match(/close/))
+            if (current.className.match(/icon/))
             {
-                if (nodes.length === 0)
-                {
-                    nodes.push(tree);
-                } else
-                { //TODO: выбор нового файло на том же уровне, что уже выбранный
-                    var newNode = false;
+                current = current.parentElement;
+            }
 
-                    for (var nodeIndex = nodes.length - 1; nodeIndex >= 0; nodeIndex--)
+            if (!current.children)
+            {
+                return;
+            }
+
+            if (nodes.length === 0)
+            {
+                nodes.push(tree);
+                initSelectionTree(tree, onItemSelected(nodes), selectedItemId);
+
+                return;
+            }
+
+            var newNode = false;
+            var resetSelectedItem = false;
+            for (var nodeIndex = nodes.length - 1; nodeIndex >= 0; nodeIndex--)
+            {
+                for (var index in nodes[nodeIndex].children)
+                {
+                    if (nodes[nodeIndex].children[index].id === current.id)
+                    {
+                        nodes.push(nodes[nodeIndex].children[index]);
+                        newNode = true;
+                        break;
+                    }
+                }
+
+                if (newNode)
+                {
+                    break;
+                } else
+                {
+                    if (!resetSelectedItem)
                     {
                         for (var index in nodes[nodeIndex].children)
                         {
-                            if (nodes[nodeIndex].children[index].id === current.parentElement.id)
+                            if (nodes[nodeIndex].children[index].id === selectedItemId || nodes[nodeIndex] === selectedItemId)
                             {
-                                nodes.push(nodes[nodeIndex].children[index]);
-                                newNode = true;
+                                selectedItemId = undefined;
+                                resetSelectedItem = true;
                                 break;
                             }
                         }
+                    }
 
-                        if (newNode)
+                    nodes.pop();
+                }
+            }
+            initSelectionTree(tree, onItemSelected(nodes), selectedItemId);
+        }
+    }
+
+
+    document.getElementById("fileTree").onclick = function ()
+    {
+        if (timer)
+        {
+            clearTimeout(timer)
+        }
+
+        var evt = event || window.event;
+        var current = evt.target || evt.srcElement;
+        timer = setTimeout(function ()
+        {
+            if (current.className.match(/show-more/))
+            {
+                if (current.className.match(/close/))
+                {
+                    if (nodes.length === 0)
+                    {
+                        nodes.push(tree);
+                    } else
+                    {
+                        var newNode = false;
+                        var resetSelectedItem = false;
+
+                        for (var nodeIndex = nodes.length - 1; nodeIndex >= 0; nodeIndex--)
                         {
-                            break;
+                            for (var index in nodes[nodeIndex].children)
+                            {
+                                if (nodes[nodeIndex].children[index].id === current.parentElement.id)
+                                {
+                                    nodes.push(nodes[nodeIndex].children[index]);
+                                    newNode = true;
+                                    break;
+                                }
+                            }
+
+                            if (newNode)
+                            {
+                                break;
+                            } else
+                            {
+                                if (!resetSelectedItem)
+                                {
+                                    for (var index in nodes[nodeIndex].children)
+                                    {
+                                        if (nodes[nodeIndex].children[index].id === selectedItemId || nodes[nodeIndex] === selectedItemId)
+                                        {
+                                            selectedItemId = undefined;
+                                            resetSelectedItem = true;
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                nodes.pop();
+
+                            }
+                        }
+                    }
+                } else
+                { //close function
+                    var resetSelectedItem = false;
+                    for (var nodeIndex = nodes.length - 1; nodeIndex >= 0; nodeIndex--)
+                    {
+                        if (!resetSelectedItem)
+                        {
+                            for (var index in nodes[nodeIndex].children)
+                            {
+                                if (nodes[nodeIndex].children[index].id === selectedItemId || nodes[nodeIndex] === selectedItemId)
+                                {
+                                    selectedItemId = undefined;
+                                    resetSelectedItem = true;
+                                    break;
+                                }
+                            }
                         }
 
-                        nodes.pop();
+                        if (nodes[nodeIndex].id === current.parentElement.id)
+                        {
+                            nodes.splice(nodeIndex, nodes.length - nodeIndex);
+                        }
                     }
                 }
             } else
             {
-                for (var index in nodes)
+                if (current.className.match(/icon/))
                 {
-                    if (nodes[index].id === current.parentElement.id)
-                    {
-                        nodes.splice(index, nodes.length - index);
-                    }
+                    selectedItemId = current.parentElement.id;
+                } else
+                {
+                    selectedItemId = current.id;
                 }
             }
-        } else
-        {
-            // if (current.className.match(/icon/))
-            // {
-            //     console.log(current.parentElement.id)
-            // }
-            // console.log(current.id)
-        }
 
-        initSelectionTree(tree, onItemSelected(nodes), undefined);
+            initSelectionTree(tree, onItemSelected(nodes), selectedItemId);
+        }, 250);
     }
 
     function initSelectionTree(tree, onItemSelected, selectedItemId)
     {
         document.getElementById('fileTree').innerHTML = "";
-        startRenderTree(tree, nodes, 0);
+        startRenderTree(tree, nodes, 0, selectedItemId);
         setIndent();
     }
 };
@@ -124,14 +230,14 @@ function onItemSelected(nodeChain)
  */
 var ContentType;
 
-function startRenderTree(tree, nodes, level)
+function startRenderTree(tree, nodes, level, selectedItemId)
 {
     if (level === 0)
     {
-        showElement(tree.title, tree.type, tree.id, level, true, nodes[level] === tree);
+        showElement(tree.title, tree.type, tree.id, level, true, nodes[level] === tree, selectedItemId === tree.id);
         if (nodes !== [] && nodes[level] === tree)
         {
-            startRenderTree(tree.children, nodes, level + 1);
+            startRenderTree(tree.children, nodes, level + 1, selectedItemId);
         }
     } else
     {
@@ -143,17 +249,17 @@ function startRenderTree(tree, nodes, level)
                 isDir = true;
             }
 
-            showElement(tree[index].title, tree[index].type, tree[index].id, level, isDir, nodes[level] === tree[index]);
+            showElement(tree[index].title, tree[index].type, tree[index].id, level, isDir, nodes[level] === tree[index], selectedItemId === tree[index].id);
 
             if (tree[index].children && nodes !== [] && nodes[level] === tree[index])
             {
-                startRenderTree(tree[index].children, nodes, level + 1);
+                startRenderTree(tree[index].children, nodes, level + 1, selectedItemId);
             }
         }
     }
 }
 
-function showElement(title, type, id, level, isDir, inNode)
+function showElement(title, type, id, level, isDir, inNode, isSelected)
 {
     var element = document.createElement('span');
     var elementWrapper = document.createElement('span');
@@ -163,7 +269,7 @@ function showElement(title, type, id, level, isDir, inNode)
 
     element.className = "b-popup__element";
     element.id = id;
-    elementWrapper.className = "b-popup__element-wrapper b-popup__level_" + level;
+    elementWrapper.className = "b-popup__element-wrapper b-popup__level_" + level + " " + (isSelected ? "b-popup__element-wrapper_active" : "");
     icon.className = "b-popup__icon b-popup__icon_" + type;
     if (isDir)
     {
