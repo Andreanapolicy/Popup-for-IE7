@@ -5,6 +5,6 @@ function setIndent ()
     {
         var classes = items[index].className;
         var indentCoef = classes.match(/\d+/)[0];
-        items[index].style.paddingLeft = 12 * parseInt(indentCoef) + "px";
+        items[index].style.paddingLeft = 12 * parseInt(indentCoef) + 13 + "px";
     }
 }

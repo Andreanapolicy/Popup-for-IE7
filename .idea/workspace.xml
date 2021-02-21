@@ -19,11 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eee2edc-97f6-4dcb-97f2-367cf1116c89" name="Default Changelist" comment="#PIE7-1 коммит в локале. Подкорректировал вывод данных в popup">
+    <list default="true" id="8eee2edc-97f6-4dcb-97f2-367cf1116c89" name="Default Changelist" comment="#PIE7-1 коммит в локале. Сделаны все механизмы">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/dataHandler.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/setIndent.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/setIndent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/popup.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +65,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -100,7 +101,9 @@
       <workItem from="1613639550051" duration="3267000" />
       <workItem from="1613683695223" duration="3265000" />
       <workItem from="1613732345569" duration="734000" />
-      <workItem from="1613761755810" duration="14888000" />
+      <workItem from="1613761755810" duration="15192000" />
+      <workItem from="1613844393323" duration="14521000" />
+      <workItem from="1613910851080" duration="6608000" />
     </task>
     <task id="LOCAL-00001" summary="#PIE7-1 коммит в локале. Сделал первичное отображение данных">
       <created>1613598551675</created>
@@ -116,7 +119,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613641035857</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="#PIE7-1 коммит в локале. Сделан механизм перемещения по директориям">
+      <created>1613779938191</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613779938191</updated>
+    </task>
+    <task id="LOCAL-00004" summary="#PIE7-1 коммит в локале. Сделаны все механизмы">
+      <created>1613854544056</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1613854544056</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +154,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#PIE7-1 коммит в локале. Сделал первичное отображение данных" />
     <MESSAGE value="#PIE7-1 коммит в локале. Подкорректировал вывод данных в popup" />
-    <option name="LAST_COMMIT_MESSAGE" value="#PIE7-1 коммит в локале. Подкорректировал вывод данных в popup" />
+    <MESSAGE value="#PIE7-1 коммит в локале. Сделан механизм перемещения по директориям" />
+    <MESSAGE value="#PIE7-1 коммит в локале. Сделаны все механизмы" />
+    <option name="LAST_COMMIT_MESSAGE" value="#PIE7-1 коммит в локале. Сделаны все механизмы" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1672" y="97" width="1537" height="952" key="#CSS" timestamp="1612694509091">
@@ -165,9 +184,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="461" y="200" key="SettingsEditor/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1612813032370" />
-    <state x="552" y="284" key="Vcs.Push.Dialog.v2" timestamp="1613641054659">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="-1368" y="284" key="Vcs.Push.Dialog.v2" timestamp="1613854550036">
+      <screen x="-1920" y="30" width="1920" height="1050" />
     </state>
+    <state x="-1368" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613854550036" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1613598716521" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1613641054659" />
     <state x="777" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613640758148">
@@ -175,18 +195,23 @@
     </state>
     <state x="-1143" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1612695943852" />
     <state x="777" y="465" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050@0.30.1920.1050" timestamp="1613640758148" />
-    <state x="1" y="30" width="1320" height="1032" maximized="true" key="dock-window-1" timestamp="1613773674487">
+    <state x="0" y="30" width="1660" height="1032" maximized="true" key="dock-window-1" timestamp="1613857233428">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="1" y="30" width="1320" height="1032" maximized="true" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613773674487" />
+    <state x="0" y="30" width="1660" height="1032" maximized="true" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613857233428" />
     <state x="-1369" y="-23" width="1369" height="1032" maximized="true" key="dock-window-1/0.30.1920.1050/-1920.30.1920.1050@0.30.1920.1050" timestamp="1613600501142" />
     <state x="-1252" y="130" width="583" height="849" key="find.popup" timestamp="1613768136157">
       <screen x="-1920" y="30" width="1920" height="1050" />
     </state>
     <state x="-1252" y="130" width="583" height="849" key="find.popup/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613768136157" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1613655818598">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="-1304" y="258" width="672" height="677" key="run.anything.popup" timestamp="1613860228467">
+      <screen x="-1920" y="30" width="1920" height="1050" />
     </state>
+    <state x="-1304" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613860228467" />
+    <state x="-1297" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1613911722073">
+      <screen x="-1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="-1297" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050/-1920.30.1920.1050@-1920.30.1920.1050" timestamp="1613911722073" />
     <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1613655818598" />
   </component>
 </project>

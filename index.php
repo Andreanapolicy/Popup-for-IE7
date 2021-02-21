@@ -9,10 +9,9 @@
     <body>
         <div class="b-popup">
             <div class="b-popup__container b-popup__container_indent">
-                <div id="fileTree">
+                <div id="fileTree" onselectstart="return false">
                 </div>
             </div>
-            <button class="b-popup__button">Выбрать</button>
         </div>
         <script src="js/getJSON.js"></script>
         <script src="js/setIndent.js"></script>

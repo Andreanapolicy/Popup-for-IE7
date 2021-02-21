@@ -25,20 +25,8 @@
     height: 336px;
     border: 1px solid #565656;
     overflow: scroll;
-    padding: 7px 0 0 13px;
+    padding: 7px 0 0;
     position: relative;
-}
-
-.b-popup__preloader
-{
-    width: 542px;
-    height: 318px;
-}
-
-.b-popup__preloader_image
-{
-    margin: 26% 47%;
-    transform: rotate(0deg);
 }
 
 .b-popup__list
@@ -52,13 +40,12 @@
     padding: 6px 0 9px 62px;
     position: relative;
     height: auto;
-    width: 100%;
     display: block;
 }
 
 .b-popup__element-wrapper
 {
-    margin: 2px 0 4px;
+    padding: 2px 0 4px;
     height: auto;
     display: block;
 }
@@ -74,10 +61,9 @@
 
 .b-popup__element_disable
 {
-    background-color: #f0f0f0;
     filter: alpha(opacity=50);
     zoom: 1;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .b-popup__show-more
@@ -95,9 +81,21 @@
     border-radius: 3px;
 }
 
+.b-popup__element-wrapper_disable .b-popup__show-more:hover
+{
+    background-color: #ffffff;
+}
+
 .b-popup__element-wrapper:hover
 {
     background-color: #d3d6d8;
+    cursor: pointer;
+}
+
+.b-popup__element-wrapper_disable:hover
+{
+    background-color: #ffffff;
+    cursor: default;
 }
 
 .b-popup__element-wrapper_active
@@ -109,9 +107,4 @@
 {
     left: -22px;
     top: 6px;
-}
-
-.b-popup__element_list-icon .b-popup__list
-{
-    margin: 11px 0 -3px -7px;
 }
