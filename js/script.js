@@ -258,13 +258,6 @@ function selectItem(current)
 }
 
 /**
- * @param {TreeNode} tree
- * @param {function(Array<TreeNode>):void} onItemSelected
- * @param {string|undefined} selectedItemId
- * @return {Element}
- */
-
-/**
  * @typedef {{
  *   id: string,
  *   title: string,
