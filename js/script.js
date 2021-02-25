@@ -1,12 +1,28 @@
 window.onload = function ()
 {
-    var nodes = [tree];
-    var selectedItemId = undefined;
+    initSelectionTree(tree, onItemSelected(), '148');
+};
+
+function initSelectionTree(tree, onItemSelected, selectedItemId)
+{
     var timer;
+    var nodes = [];
+    var container = "fileTree";
+    if (selectedItemId === undefined)
+    {
+        nodes = [tree];
+    }
 
-    initSelectionTree(tree, onItemSelected(nodes), undefined);
+    if (selectedItemId !== tree.id && nodes.length === 0)
+    {
+        nodes = [tree];
+        getNodes(tree.children, selectedItemId, nodes);
+        nodes.pop();
+    }
 
-    document.getElementById("fileTree").ondblclick = function ()
+    renderTree(tree, nodes, selectedItemId, container);
+
+    document.getElementById(container).ondblclick = function ()
     {
         clearTimeout(timer);
         var current = getCurrentElement(event, true);
@@ -14,28 +30,28 @@ window.onload = function ()
 
         if (isUnselectableElement(current))
         {
-            return ;
+            return;
         }
 
         if (!current.className.match(/show-more/))
         {
             selectedItemId = openNewDirectoryClick(current, nodes, selectedItemId, tree);
-            initSelectionTree(tree, onItemSelected(nodes), selectedItemId);
+            renderTree(tree, nodes, selectedItemId, container);
         }
     }
 
-    document.getElementById("fileTree").onclick = function ()
+    document.getElementById(container).onclick = function ()
     {
         if (timer)
         {
-            clearTimeout(timer)
+            clearTimeout(timer);
         }
 
         var current = getCurrentElement(event, false);
 
         if (isUnselectableElement(getMainElement(current)))
         {
-            return ;
+            return;
         }
 
         timer = setTimeout(function ()
@@ -54,21 +70,52 @@ window.onload = function ()
                 selectedItemId = selectItem(getMainElement(current));
             }
 
-            initSelectionTree(tree, onItemSelected(nodes), selectedItemId);
+            renderTree(tree, nodes, selectedItemId, container);
         }, 250);
     }
+}
 
-    function initSelectionTree(tree, onItemSelected, selectedItemId)
+function getNodes(tree, selectedItemId, nodes)
+{
+    if (nodes[nodes.length - 1].id === selectedItemId || !tree.length)
     {
-        document.getElementById('fileTree').innerHTML = "";
-        startRenderTree(tree, nodes, 0, selectedItemId);
-        setIndent();
+        return;
     }
-};
+
+    for (var index in tree)
+    {
+        if (tree[index].id === selectedItemId)
+        {
+            nodes.push(tree[index]);
+            break;
+        }
+
+        if (tree[index].children)
+        {
+            nodes.push(tree[index]);
+
+            getNodes(tree[index].children, selectedItemId, nodes);
+            if (tree[index].id === nodes[nodes.length - 1].id)
+            {
+                nodes.pop();
+            } else
+            {
+                break;
+            }
+        }
+    }
+}
+
+function renderTree(tree, nodes, selectedItemId, container)
+{
+    document.getElementById(container).innerHTML = "";
+    startRenderTree(tree, nodes, 0, selectedItemId, container);
+    setIndent();
+}
 
 function isUnselectableElement(current)
 {
-    return current.className.match(/disable/)
+    return current.className.match(/disable/);
 }
 
 function getCurrentElement(event, transform)
@@ -92,7 +139,7 @@ function getMainElement(current)
         newCurrent = current.parentElement;
     }
 
-    return newCurrent
+    return newCurrent;
 }
 
 function changeSelectedItem(nodes, selectedItemId)
@@ -131,7 +178,7 @@ function openNewDirectory(nodes, selectedItemId, current)
         nodes.pop();
     }
 
-    return selectedItemId
+    return selectedItemId;
 }
 
 function findNewNode(nodes, nodeIndex, current)
@@ -148,7 +195,7 @@ function findNewNode(nodes, nodeIndex, current)
         }
     }
 
-    return newNode
+    return newNode;
 }
 
 function openNewDirectoryClick(current, nodes, selectedItemId, tree)
@@ -166,7 +213,7 @@ function openNewDirectoryClick(current, nodes, selectedItemId, tree)
         selectedItemId = openNewDirectory(nodes, selectedItemId, current)
     }
 
-    return selectedItemId
+    return selectedItemId;
 }
 
 function closeDirectory(nodes, selectedItemId, current)
@@ -193,7 +240,7 @@ function closeDirectory(nodes, selectedItemId, current)
         }
     }
 
-    return selectedItemId
+    return selectedItemId;
 }
 
 function selectItem(current)
@@ -207,7 +254,7 @@ function selectItem(current)
         selectedItemId = current.id;
     }
 
-    return selectedItemId
+    return selectedItemId;
 }
 
 /**
@@ -246,36 +293,35 @@ function onItemSelected(nodeChain)
  */
 var ContentType;
 
-function startRenderTree(tree, nodes, level, selectedItemId)
+function isDir(element)
+{
+    return element.type === "shared_project" || element.type === "project" || element.type === "folder";
+}
+
+function startRenderTree(tree, nodes, level, selectedItemId, container)
 {
     if (level === 0)
     {
-        showElement(tree.title, tree.type, tree.id, level, true, nodes[level] === tree, selectedItemId === tree.id, nodes.unselectable);
+        showElement(tree.title, tree.type, tree.id, level, true, nodes[level] === tree, selectedItemId === tree.id, nodes.unselectable, container);
         if (nodes !== [] && nodes[level] === tree)
         {
-            startRenderTree(tree.children, nodes, level + 1, selectedItemId);
+            startRenderTree(tree.children, nodes, level + 1, selectedItemId, container);
         }
     } else
     {
         for (var index in tree)
         {
-            var isDir = false;
-            if (tree[index].type === "shared_project" || tree[index].type === "project" || tree[index].type === "folder")
-            {
-                isDir = true;
-            }
-
-            showElement(tree[index].title, tree[index].type, tree[index].id, level, isDir, nodes[level] === tree[index], selectedItemId === tree[index].id, tree[index].unselectable);
+            showElement(tree[index].title, tree[index].type, tree[index].id, level, isDir(tree[index]), nodes[level] === tree[index], selectedItemId === tree[index].id, tree[index].unselectable, container);
 
             if (tree[index].children && nodes !== [] && nodes[level] === tree[index])
             {
-                startRenderTree(tree[index].children, nodes, level + 1, selectedItemId);
+                startRenderTree(tree[index].children, nodes, level + 1, selectedItemId, container);
             }
         }
     }
 }
 
-function showElement(title, type, id, level, isDir, inNode, isSelected, isUnselectable)
+function showElement(title, type, id, level, isDir, inNode, isSelected, isUnselectable, containerName)
 {
     var element = document.createElement('span');
     var elementWrapper = document.createElement('span');
@@ -300,7 +346,7 @@ function showElement(title, type, id, level, isDir, inNode, isSelected, isUnsele
         element.appendChild(titleNode);
     }
 
-    var container = document.getElementById('fileTree');
+    var container = document.getElementById(containerName);
 
     elementWrapper.appendChild(element);
     container.appendChild(elementWrapper);

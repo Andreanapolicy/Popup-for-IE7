@@ -65,7 +65,7 @@ var tree = {
                                                     "id": "130",
                                                     "title": "mp4",
                                                     "type": "xls",
-                                                    "unselectable": false
+                                                    "unselectable": true
                                                 }, {
                                                     "id": "133",
                                                     "title": "pdf",
